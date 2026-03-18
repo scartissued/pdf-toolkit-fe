@@ -6,23 +6,35 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "bash -c 'tsc --noEmit'"
+    ]
   },
   "dependencies": {
     "next": "16.1.7",
+    "pdfjs-dist": "^5.4.296",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-icons": "^5.5.0",
-    "react-pdf": "^10.2.0",
-    "pdfjs-dist": "^5.4.296"
+    "react-pdf": "^10.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
